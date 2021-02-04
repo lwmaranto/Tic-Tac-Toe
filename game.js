@@ -60,6 +60,81 @@ class Board {
       return O;
     }
   }
-  isFull() {}
-  whoWon() {}
+  isFull() {
+    //return true or false
+    //could also have a counter? if counter === 9 return true
+    for (let i = 0; i < this.board.length; i++) {
+      for (let j = 0; j < this.board[i].length; j++) {
+        if (this.board[i][j] === "-") {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+  whoWon() {
+    //return X O or null
+    //3 rows 1:[0][0],[0][1],[0][2] 2:[1][0],[1][1],[1][2] 3:[2][0],[2][1],[2][2]
+    //3 columns 1:[0][0],[1][0],[2][0] 2:[0][1],[1][1],[2][1] 3:[0][2],[1][2],[2][2]
+    //2 crosses 1:[0][0],[1][1],[2][2] 2: [0][2],[1][1],[2][0]
+    if (
+      //row 1
+      this.board[0][0] === this.board[0][1] &&
+      this.board[0][1] === this.board[0][2] &&
+      this.board[0][0] !== "-"
+    ) {
+      return this.board[0][0];
+    } else if (
+      //row 2
+      this.board[1][0] === this.board[1][1] &&
+      this.board[1][1] === this.board[1][2] &&
+      this.board[1][0] !== "-"
+    ) {
+      return this.board[1][0];
+    } else if (
+      //row 3
+      this.board[2][0] === this.board[2][1] &&
+      this.board[2][1] === this.board[2][2] &&
+      this.board[2][0] !== "-"
+    ) {
+      return this.board[2][0];
+    } else if (
+      //column 1
+      this.board[0][0] === this.board[1][0] &&
+      this.board[1][0] === this.board[2][0] &&
+      this.board[0][0] !== "-"
+    ) {
+      return this.board[0][0];
+    } else if (
+      //column 2
+      this.board[0][1] === this.board[1][1] &&
+      this.board[1][1] === this.board[2][1] &&
+      this.board[0][1] !== "-"
+    ) {
+      return this.board[0][1];
+    } else if (
+      //column 3
+      this.board[0][2] === this.board[1][2] &&
+      this.board[1][2] === this.board[2][2] &&
+      this.board[0][2] !== "-"
+    ) {
+      return this.board[0][2];
+    } else if (
+      //diagonal 1
+      this.board[0][0] === this.board[1][1] &&
+      this.board[1][1] === this.board[2][2] &&
+      this.board[0][0] !== "-"
+    ) {
+      return this.board[0][0];
+    } else if (
+      //diagonal 2
+      this.board[0][2] === this.board[1][1] &&
+      this.board[1][1] === this.board[2][2] &&
+      this.board[2][0] !== "-"
+    ) {
+      return this.board[0][2];
+    } else {
+      return null;
+    }
+  }
 }
