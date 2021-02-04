@@ -1,0 +1,22 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "I built this tic tac toe game as an example of object oriented programming.",
+  "main": "game.js",
+  "scripts": {
+    "test": "testem"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lwmaranto/Tic-Tac-Toe.git"
+  },
+  "author": "Laura Maranto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lwmaranto/Tic-Tac-Toe/issues"
+  },
+  "homepage": "https://github.com/lwmaranto/Tic-Tac-Toe#readme",
+  "dependencies": {
+    "testem": "^3.2.0"
+  }
+}

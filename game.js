@@ -1,6 +1,10 @@
 const X = "X";
 const O = "O";
 
+function hello() {
+  return "hello world";
+}
+
 class Board {
   constructor() {
     this.board = [
