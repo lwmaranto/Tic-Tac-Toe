@@ -56,8 +56,7 @@ class Board {
     //this.turn === X ? O : X;
     if (this.turn === X) {
       this.turn = O;
-    }
-    if (this.turn === O) {
+    } else {
       this.turn = X;
     }
   }

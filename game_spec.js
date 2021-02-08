@@ -20,10 +20,12 @@ describe("Board Class", () => {
       game.setMove(1);
       expect(game.printBoard()).toEqual("X--\nXO-\n---");
     });
-    // it("Invalid Number", () => {
-    //   const game = new Board(true);
-    //   game.setMove(20);
-    //   expect(game.printBoard()).toEqual("Invalid Number");
-    // });
   });
+  //   describe("setMove method", () => {
+  //     it("Invalid Number", () => {
+  //       const game = new Board(true);
+  //       game.setMove(20);
+  //       expect(game.setMove()).toThrowError(/Invalid Number/);
+  //     });
+  //   });
 });
