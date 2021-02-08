@@ -1,27 +1,25 @@
 const X = "X";
 const O = "O";
 
-function hello() {
-  return "hello world";
-}
-
 class Board {
-  constructor() {
+  constructor(startWithX) {
     this.board = [
       ["-", "-", "-"],
       ["-", "-", "-"],
       ["-", "-", "-"],
     ];
-    this.turn = [X, O][Math.floor(Math.random() * 2)];
+    this.turn = startWithX ? X : [X, O][Math.floor(Math.random() * 2)];
   }
   printBoard() {
-    let result = "";
+    let resultArr = [];
     for (let i = 0; i < this.board.length; i++) {
+      let rowStr = "";
       for (let j = 0; j < this.board[i].length; j++) {
-        result = result + this.board[i][j];
+        rowStr = rowStr + this.board[i][j];
       }
-      result = result + "\n";
+      resultArr.push(rowStr);
     }
+    let result = resultArr.join("\n");
     return result;
   }
   printLegend() {
@@ -55,7 +53,13 @@ class Board {
     this.switchTurn();
   }
   switchTurn() {
-    this.turn === X ? O : X;
+    //this.turn === X ? O : X;
+    if (this.turn === X) {
+      this.turn = O;
+    }
+    if (this.turn === O) {
+      this.turn = X;
+    }
   }
   whoseTurn() {
     if (this.turn === X) {
