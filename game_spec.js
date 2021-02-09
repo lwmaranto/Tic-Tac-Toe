@@ -49,6 +49,12 @@ describe("Board Class", () => {
       game.setMove(9);
       expect(game.isFull()).toEqual(true);
     });
+    it("game board not full", () => {
+      const game = new Board(true);
+      game.setMove(1);
+      game.setMove(2);
+      expect(game.isFull()).toEqual(false);
+    });
     // it("Invalid Number", () => {
     //   const game = new Board(true);
     //   game.setMove(20);
