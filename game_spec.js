@@ -21,11 +21,38 @@ describe("Board Class", () => {
       expect(game.printBoard()).toEqual("X--\nXO-\n---");
     });
   });
-  //   describe("setMove method", () => {
-  //     it("Invalid Number", () => {
-  //       const game = new Board(true);
-  //       game.setMove(20);
-  //       expect(game.setMove()).toThrowError(/Invalid Number/);
-  //     });
-  //   });
+
+  describe("setMove method", () => {
+    it("sets move", () => {
+      const game = new Board(true);
+      game.setMove(4);
+      expect(game.board[1][0]).toEqual(X);
+    });
+    // it("Invalid Number", () => {
+    //   const game = new Board(true);
+    //   game.setMove(20);
+    //   expect(game.setMove()).toThrowError(/Invalid Number/);
+    // });
+  });
+
+  describe("isFull method", () => {
+    it("game board full", () => {
+      const game = new Board(true);
+      game.setMove(1);
+      game.setMove(2);
+      game.setMove(3);
+      game.setMove(4);
+      game.setMove(5);
+      game.setMove(6);
+      game.setMove(7);
+      game.setMove(8);
+      game.setMove(9);
+      expect(game.isFull()).toEqual(true);
+    });
+    // it("Invalid Number", () => {
+    //   const game = new Board(true);
+    //   game.setMove(20);
+    //   expect(game.setMove()).toThrowError(/Invalid Number/);
+    // });
+  });
 });
