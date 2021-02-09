@@ -95,6 +95,23 @@ describe("Board Class", () => {
       //OXO
     });
 
+    it("No one won not full", () => {
+      const game = new Board(true);
+      game.setMove(1);
+      game.setMove(3);
+      game.setMove(2);
+      game.setMove(4);
+      game.setMove(5);
+      game.setMove(6);
+      game.setMove(7);
+      game.setMove(8);
+
+      expect(game.whoWon()).toEqual(null);
+      //XXO
+      //OXO
+      //XO-
+    });
+
     // it("game board not full", () => {
     //   const game = new Board(true);
     //   game.setMove(1);
