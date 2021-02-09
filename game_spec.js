@@ -61,4 +61,36 @@ describe("Board Class", () => {
     //   expect(game.setMove()).toThrowError(/Invalid Number/);
     // });
   });
+
+  describe("whoWon method", () => {
+    it("X won", () => {
+      const game = new Board(true);
+      game.setMove(1);
+      game.setMove(2);
+      game.setMove(3);
+      game.setMove(4);
+      game.setMove(5);
+      game.setMove(6);
+      game.setMove(7);
+      game.setMove(8);
+      game.setMove(9);
+      expect(game.whoWon()).toEqual(X);
+      //XOX
+      //OXO
+      //XOX
+    });
+
+    // it("game board not full", () => {
+    //   const game = new Board(true);
+    //   game.setMove(1);
+    //   game.setMove(2);
+    //   expect(game.isFull()).toEqual(false);
+    // });
+
+    // it("Invalid Number", () => {
+    //   const game = new Board(true);
+    //   game.setMove(20);
+    //   expect(game.setMove()).toThrowError(/Invalid Number/);
+    // });
+  });
 });
