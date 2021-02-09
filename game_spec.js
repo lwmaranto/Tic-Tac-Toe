@@ -22,6 +22,13 @@ describe("Board Class", () => {
     });
   });
 
+  describe("printLegend method", () => {
+    it("legend", () => {
+      const game = new Board();
+      expect(game.printLegend()).toEqual("1 2 3\n4 5 6\n7 8 9");
+    });
+  });
+
   describe("setMove method", () => {
     it("sets move", () => {
       const game = new Board(true);
@@ -127,13 +134,6 @@ describe("Board Class", () => {
       //OXX
       //XOX
     });
-
-    // it("game board not full", () => {
-    //   const game = new Board(true);
-    //   game.setMove(1);
-    //   game.setMove(2);
-    //   expect(game.isFull()).toEqual(false);
-    // });
 
     // it("Invalid Number", () => {
     //   const game = new Board(true);
