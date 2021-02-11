@@ -27,6 +27,7 @@ class Board {
   }
   setMove(num) {
     num = Number(num);
+
     if (num < 1 || num > 9) {
       throw "Invalid Number";
     }
@@ -128,16 +129,16 @@ class Board {
     ) {
       return this.board[0][2];
     } else if (
-      //diagonal 1
+      //diagonal 1 [0][0],[1][1],[2][2]
       this.board[0][0] === this.board[1][1] &&
       this.board[1][1] === this.board[2][2] &&
       this.board[0][0] !== "-"
     ) {
       return this.board[0][0];
     } else if (
-      //diagonal 2
+      //diagonal 2 [0][2],[1][1],[2][0]
       this.board[0][2] === this.board[1][1] &&
-      this.board[1][1] === this.board[2][2] &&
+      this.board[1][1] === this.board[2][0] &&
       this.board[2][0] !== "-"
     ) {
       return this.board[0][2];

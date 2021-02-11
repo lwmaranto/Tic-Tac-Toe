@@ -13,15 +13,30 @@ class Game {
     console.log(this.board.printBoard());
     console.log("Pick an X player and an O player");
 
-    while (this.board.isFull() === false && this.board.whoWon() === null) {
+    while (
+      this.board.isFull() === false &&
+      this.board.whoWon() !== "X" &&
+      this.board.whoWon() !== "O"
+    ) {
       console.log(this.board.whoseTurn(), ", it is your turn.");
       let position = reader.question(
         "Pick a box on the board using numbers 1-9: "
       );
-      this.board.setMove(position);
-      console.log(this.board.printBoard());
+      position = Number(position);
+      if (typeof position === "number") {
+        this.board.setMove(position);
+        console.log(this.board.printBoard());
+      } else {
+        let positionTwo = reader.question("PLEASE PICK A NUMBER BETWEEN 1-9: ");
+        this.board.setMove(position);
+        console.log(this.board.printBoard());
+      }
     }
-    console.log(this.board.whoWon(), "YOU ARE THE WINNER!!!");
+    if (this.board.whoWon() !== null) {
+      console.log(this.board.whoWon(), "YOU ARE THE WINNER!!!");
+    } else {
+      console.log("The board is full!");
+    }
 
     //console.log("Here is the box you picked:", position);
   }
