@@ -1,2 +1,4 @@
-import Board from "./board";
-import Game from "./game";
+const Game = require("./game");
+
+const game = new Game();
+game.toStart();

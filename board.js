@@ -1,7 +1,7 @@
 const X = "X";
 const O = "O";
 
-export default class Board {
+class Board {
   constructor(startWithX) {
     this.board = [
       ["-", "-", "-"],
@@ -145,3 +145,5 @@ export default class Board {
     }
   }
 }
+
+module.exports = Board;

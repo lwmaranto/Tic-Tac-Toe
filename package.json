@@ -2,8 +2,9 @@
   "name": "tic-tac-toe",
   "version": "1.0.0",
   "description": "I built this tic tac toe game as an example of object oriented programming.",
-  "main": "game.js",
+  "main": "main.js",
   "scripts": {
+    "start": "node main.js",
     "test": "testem"
   },
   "repository": {
@@ -17,6 +18,8 @@
   },
   "homepage": "https://github.com/lwmaranto/Tic-Tac-Toe#readme",
   "dependencies": {
+    "prompt": "^1.1.0",
+    "readline-sync": "^1.4.10",
     "testem": "^3.2.0"
   }
 }
