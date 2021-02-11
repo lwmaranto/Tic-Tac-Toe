@@ -26,6 +26,7 @@ class Board {
     return "1 2 3\n4 5 6\n7 8 9";
   }
   setMove(num) {
+    num = Number(num);
     if (num < 1 || num > 9) {
       throw "Invalid Number";
     }

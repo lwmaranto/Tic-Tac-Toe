@@ -16,7 +16,7 @@ describe("Board Class", () => {
     it("half full", () => {
       const game = new Board(true);
       game.setMove(4);
-      game.setMove(5);
+      game.setMove("5");
       game.setMove(1);
       expect(game.printBoard()).toEqual("X--\nXO-\n---");
     });
